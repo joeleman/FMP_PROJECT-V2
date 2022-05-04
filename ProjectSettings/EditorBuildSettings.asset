@@ -6,6 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main_Game.unity
+    path: Assets/Scenes/Menu.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Start_Menu.unity
+    guid: 955eda8858fa0b0478471ff551b24338
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 9b7c546a1208b574a9a04f7c0f7c831c
+  - enabled: 1
+    path: Assets/Scenes/Options.unity
+    guid: 858b37ff28d83c040a0f9d59a9a85d22
+  - enabled: 1
+    path: Assets/Scenes/Car Colours/Yellow.unity
+    guid: 64500915b5681484f8aa29775fcc4ec6
+  - enabled: 1
+    path: Assets/Scenes/Car Colours/Blue.unity
     guid: 617a015b557bf0948a3f26e52e365fb2
+  - enabled: 1
+    path: Assets/Scenes/Car Colours/Red.unity
+    guid: 4d3f996cd5da6324ba7b84385cdeda89
   m_configObjects: {}
