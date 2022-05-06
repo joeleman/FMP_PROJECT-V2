@@ -42,11 +42,13 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Loading menu...");
         SceneManager.LoadScene("Menu");
+        Time.timeScale = 1f;
     }
 
     public void QuitGame()
     {
         Debug.Log("Quitting game...");
         Application.Quit();
+        Time.timeScale = 1f;
     }
 }
