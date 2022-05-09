@@ -62,15 +62,15 @@ public class AIDriving : MonoBehaviour
             directional = Mathf.Clamp(targeter.localEulerAngles.y-360, -25, 25);
         }
         RaycastHit hit;
-        if (Physics.Raycast(right.position, right.forward, out hit, 5, layer))
+        if (Physics.Raycast(right.position, right.forward, out hit, 15 ))
         {
             directional = -25/(hit.distance/2);
         }
-        if (Physics.Raycast(left.position, left.forward, out hit, 5, layer))
+        if (Physics.Raycast(left.position, left.forward, out hit, 15))
         {
             directional = 25/(hit.distance/2);
         }
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 4, layer))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 4))
         {
             directional = -directional;
             throttlecontrol = -5;
