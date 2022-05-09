@@ -41,8 +41,16 @@ public class AIDriving : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if(Mathf.Abs(directional) < 10)
+        void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.tag == "Player")
+            {
+                Debug.Log("hit!");
+                Destroy(other.gameObject);
+            }
+        }
+
+        if (Mathf.Abs(directional) < 10)
         {
             throttlecontrol = 1;
         }
@@ -62,11 +70,11 @@ public class AIDriving : MonoBehaviour
             directional = Mathf.Clamp(targeter.localEulerAngles.y-360, -25, 25);
         }
         RaycastHit hit;
-        if (Physics.Raycast(right.position, right.forward, out hit, 15 ))
+        if (Physics.Raycast(right.position, right.forward, out hit, 10 ))
         {
             directional = -25/(hit.distance/2);
         }
-        if (Physics.Raycast(left.position, left.forward, out hit, 15))
+        if (Physics.Raycast(left.position, left.forward, out hit, 10))
         {
             directional = 25/(hit.distance/2);
         }
@@ -124,5 +132,8 @@ public class AIDriving : MonoBehaviour
             }
         }
     }
+
+
+
 }
  
