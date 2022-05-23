@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
 
+
+
+
+
 [System.Serializable]
 public class AxleInfo
 {
@@ -91,6 +95,17 @@ public class CarDriver2 : MonoBehaviour
 	}
 
 	
+
+ 	void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Debug.Log("hit!");
+            Destroy(gameObject);
+			SceneManager.LoadScene(1);
+			
+        }
+    }
 
 
 }

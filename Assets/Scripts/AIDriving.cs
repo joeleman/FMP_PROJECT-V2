@@ -4,7 +4,7 @@ using UnityEngine;
  
 public class AIDriving : MonoBehaviour
 {
-    // Defining variables
+    
     public LayerMask layer;
     public WheelCollider wheelFR;
     public WheelCollider wheelFL;
@@ -32,23 +32,23 @@ public class AIDriving : MonoBehaviour
     public GameObject blue;
     public bool lightchange;
     public float lighttime;
-    // Start is called before the first frame update
+    
     void Start()
     {
         rb.centerOfMass = center;
     }
  
-    // Update is called once per frame
+   void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("hit!");
+            Destroy(collision.gameObject);
+        }
+    }
     void Update()
     {
-        void OnTriggerEnter(Collider other)
-        {
-            if (other.gameObject.tag == "Player")
-            {
-                Debug.Log("hit!");
-                Destroy(other.gameObject);
-            }
-        }
+        
 
         if (Mathf.Abs(directional) < 10)
         {
@@ -90,6 +90,7 @@ public class AIDriving : MonoBehaviour
  
         wheelFR.steerAngle = wheelangle;
         wheelFL.steerAngle = wheelangle;
+
  
         wheelFR.GetWorldPose(out wheelpos, out wheelrot);
         wheelFRg.transform.position = wheelpos;
