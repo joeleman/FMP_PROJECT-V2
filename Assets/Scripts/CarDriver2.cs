@@ -107,5 +107,14 @@ public class CarDriver2 : MonoBehaviour
         }
     }
 
+	void OnTriggerEnter(Collider collision)
+	{
+		if (collision.gameObject.tag == "Coin")
+		{
+			Debug.Log("hit!");
+			Destroy(gameObject);
+			
 
+		}
+	}
 }
